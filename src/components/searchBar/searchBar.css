@@ -1,0 +1,16 @@
+.form > input {
+  padding: 0.625rem;
+  border-radius: 0.9rem 0 0 0.9rem;
+  border: none;
+  outline: none;
+  background-color: aliceblue;
+}
+
+.input_button {
+  padding: 0.625rem;
+  border-radius: 0 0.9rem 0.9rem 0;
+color: var(--white);
+font-weight: 600;
+background-color: var(--blue);
+cursor: pointer;
+}

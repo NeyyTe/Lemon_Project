@@ -1,13 +1,77 @@
-body {
+/**Reset universel*/
+*,
+::after,
+::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  /* outline: 2px solid red; */ /* À activer pour voir l'espace des éléments*/
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  word-break: break-word; /* Garde le texte dans son conteneur et applique la césure par mots entier*/
+}
+
+h1,h2{
+ 
+  font-family: "Cinzel Decorative", cursive;
+}
+
+p{
+  line-height: 150%;
+
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --lemon : #abcc00;
+  --blue : #131136
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(0, 0, 0);
+  background-color: var(--black);
+  word-break: break-word;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lemon);
+  border-radius: 10px;
+  transition: all 2s ease;
+}
+
+/**Fonts **/
+
+/*Cinzel*/ @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital@1&family=Great+Vibes&family=Parisienne&family=Playfair+Display+SC:ital@1&family=Tangerine:wght@700&display=swap");
+
+/*Poppins*/ @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); 
