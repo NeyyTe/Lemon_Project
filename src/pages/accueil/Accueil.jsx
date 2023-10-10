@@ -1,36 +1,52 @@
-
 import './accueil.css';
 import Header from '../../components/header/Header';
-
 
 import React, { useEffect, useState } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import axios from 'axios'; 
 
 export default function Accueil() {
-  
-  const [topRatedMovies, setTopRatedMovies] = useState([]); 
+
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
+  const [error, setError] = useState(null);
+
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('https://api.tvmaze.com/shows?q=rating');
+      if (!response.ok) {
+        throw new Error('Réponse de l\'API non valide');
+      }
+      const result = await response.json();
+      setTopRatedMovies(result);
+    } catch (error) {
+      setError(error);
+      console.error('Erreur lors de la récupération des données :', error);
+    }
+  };
 
   useEffect(() => {
-    
-    axios.get('https://api.tvmaze.com/schedule/full')
-      .then(response => {
-   
-        setTopRatedMovies(response.data);
-      })
-      .catch(error => {
-        console.error('Erreur lors de la récupération des films les mieux notés :', error);
-      });
+    fetchData();
   }, []);
 
+  const display = topRatedMovies.slice(0, 20).map((movie) => (
+    <div key={movie.id}>
+      <img src={movie.image.medium} alt={movie.name} />
+    </div>
+  ));
+
   const settings = {
-    infinite: true,
+    className: "center",
+   infinite:true,
+  
+    centerPadding: "60px",
     slidesToShow: 6,
-    slidesToScroll: 1,
-    arrows: true,
-    responsive: [
+    slidesToScroll: 6,
+    speed: 500,
+    arrows : true,
+
+   responsive: [
       {
         breakpoint: 1200,
         settings: {
@@ -57,26 +73,23 @@ export default function Accueil() {
       },
     ],
   };
-
+  
   return (
     <>
-    <Header/>
-      <h2>Les 20 films les mieux notés</h2>
-      <Slider {...settings}>
-        {topRatedMovies.map(movie => (
-      
-          <div key={movie.id}>
-            <img src={movie.image} alt={movie.name} />
-            <h3>{movie.name}</h3>
+      <Header />
+      {error ? ( /*Condition ternaire pour gérer l'erreur au cas ou l'appel api échoue */
+        <p>{error}</p>
+      ) : (
+        <>
+          <div className='slider_container'>
+            <h2>Les 20 films les mieux notés</h2>
+                    <div>  <Slider {...settings}>
+            {display}
+            
+            </Slider></div>
           </div>
-        ))}
-      </Slider>
-
-      {
-
-
-      }
+        </>
+      )}
     </>
   );
 };
-
