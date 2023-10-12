@@ -15,22 +15,26 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   const [topRatedMovies, setTopRatedMovies] = useState("");
+  const [horrorMovies, setHorrorMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-
-         // Récupérez les films les mieux notés
+        // Récupére les films les mieux notés
         const response = await fetch("https://api.tvmaze.com/shows?q=rating");
 
         const result = await response.json();
         setTopRatedMovies(result);
-        console.log(result)
+        console.log(result);
 
-
-        
+        // Récupére les 20 derniers films de la catégorie "Horreur"
+        const horrorResponse = await fetch(
+          "https://api.tvmaze.com/shows?q=horror&sort=desc&limit=20"
+        );
+        const horrorResult = await horrorResponse.json();
+        setHorrorMovies(horrorResult);
       } catch (error) {
         setError(true);
         setErrorMessage(
@@ -71,7 +75,8 @@ export default function Home() {
         <div className="grid_wrapper">
           <div className="left_txt">
             <h2>
-              Regardez vos <br/> films préférés <br/>entre <span>Lemoniens </span>!
+              Regardez vos <br /> films préférés <br />
+              entre <span>Lemoniens </span>!
             </h2>
           </div>
           <div className="right_img">
@@ -88,8 +93,14 @@ export default function Home() {
           </Slider>
         </div>
 
-
-        
+        <div className="slider_container">
+          <h3>Les derniers films d'horreur</h3>{" "}
+          <Slider {...SliderLayout}>
+            {horrorMovies.map((movie) => (
+              <MovieCards key={movie.id} movie={movie}></MovieCards>
+            ))}
+          </Slider>
+        </div>
       </section>
     </>
   );

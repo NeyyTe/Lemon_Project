@@ -17,6 +17,7 @@
   flex-direction: column;
   justify-content: center;
 
+
   padding: 0.5rem 0.625rem;
   border-radius: 0 0 10px 10px;
   background-color: var(--primaryBrighter);
@@ -27,6 +28,7 @@
 }
 
 .bottom_card p {
+    height: 2.5rem;
   color: var(--text);
   font-weight: 600;
   font-family: "Poppin", sans-serif;
@@ -35,6 +37,7 @@
 }
 
 .bottom_card hr {
+  
   border: 1px solid rgb(134, 134, 134);
 }
 /* .movie_cards_container > img:hover {

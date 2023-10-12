@@ -3,25 +3,26 @@
   background-color: var(--background);
 }
 
+.container > div {
+  margin: 3rem 0;
+}
+
 .grid_wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
   grid-template-rows: 1fr;
   align-items: center;
   padding: 0 10%;
-
 }
-
 
 .left_txt > h2 {
   font-family: "Poppins", sans-serif;
- 
+
   font-size: clamp(1.5rem, 1.6585365853658536rem + 1.951219512195122vw, 4rem);
 
   text-transform: capitalize;
   color: var(--text);
   letter-spacing: 5px;
-  
 }
 
 .left_txt > h2 span {
@@ -33,8 +34,4 @@
 .right_img {
   margin: 0 auto;
   transform: scale(1.2);
-
 }
-
-
-
