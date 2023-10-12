@@ -11,6 +11,6 @@
   border-radius: 0 0.9rem 0.9rem 0;
 color: var(--white);
 font-weight: 600;
-background-color: var(--blue);
+background-color: var(--primary);
 cursor: pointer;
 }

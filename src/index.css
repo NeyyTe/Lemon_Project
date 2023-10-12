@@ -52,6 +52,13 @@ p{
   --black: #000;
   --lemon : #abcc00;
   --blue : #131136
+
+  --text: hsl(184, 60%, 95%);
+--background: hsl(183, 92%, 5%);
+--primary: hsl(183, 59%, 24%);
+--secondary: hsl(357, 85%, 45%);
+--accent: hsl(183, 59%, 49%);
+
 }
 
 ::-webkit-scrollbar {

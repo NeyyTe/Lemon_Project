@@ -1,60 +1,84 @@
-import './accueil.css';
-import Header from '../../components/header/Header';
+import "./accueil.css";
+import Header from "../../components/header/Header";
 
-import React, { useEffect, useState } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Helmet } from "react-helmet"; // Pour gérer dynamiquement les titres dans les onglets
 
 export default function Accueil() {
-
-  const [topRatedMovies, setTopRatedMovies] = useState([]);
-  const [error, setError] = useState(null);
-
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch('https://api.tvmaze.com/shows?q=rating');
-      if (!response.ok) {
-        throw new Error('Réponse de l\'API non valide');
-      }
-      const result = await response.json();
-      setTopRatedMovies(result);
-    } catch (error) {
-      setError(error);
-      console.error('Erreur lors de la récupération des données :', error);
-    }
-  };
+  const [topRatedMovies, setTopRatedMovies] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [error, setError] = useState(false);
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://api.tvmaze.com/shows?q=rating");
+        
+        const result = await response.json();
+        setTopRatedMovies(result);
+
+      } catch (error) {
+        setError(true);
+        setErrorMessage("Impossible de charger les films pour le moment. Veuillez réessayer plus tard.")
+        console.error("Impossible de charger les films pour le moment. Veuillez réessayer plus tard.", error);
+      }
+    };
+
     fetchData();
   }, []);
 
-  const display = topRatedMovies.slice(0, 20).map((movie) => (
-    <div key={movie.id}>
-      <img src={movie.image.medium} alt={movie.name} />
-    </div>
-  ));
 
+  const movieFilter = [...topRatedMovies];
+
+  movieFilter.sort((a, b) => {
+    return b["rating"]["average"] - a["rating"]["average"];
+  });
+
+
+  const topRating = [];
+  for (let i = 0; i < movieFilter.length; i++) {
+    if (i <= 20) {
+      topRating.push(movieFilter[i]);
+    }
+  }
+  
+  const display = topRating.map((movie) => {
+    return (
+      <>
+        <div key={movie.id} className="movie_cards_container">
+          <img src={movie.image.medium}
+          alt= {movie.name} />
+          <p>{movie.name + movie.rating.average}</p>
+        </div>
+      </>
+    );
+  });
+  
+  
+
+  // Settings du Slick Slider
   const settings = {
     className: "center",
-   infinite:true,
-  
-    centerPadding: "60px",
-    slidesToShow: 6,
-    slidesToScroll: 6,
-    speed: 500,
-    arrows : true,
+    infinite: true, // Boucle infinie du slider
+    lazyLoad: "ondemand", // LazyLoading des images dans le slider
 
-   responsive: [
+    slidesToShow: 7, // Nombres d'éléments affiché
+    slidesToScroll: 7, // Nombres d'éléments affiché lors d'un scroll avec les flèches ou drag a la souris
+    speed: 800, // Vitesse de transition ( en ms )
+    arrows: true, // Affichage des fléches de navigation
+
+    responsive: [ // Responsivité du slider
       {
-        breakpoint: 1200,
+        breakpoint: 1610,
         settings: {
           slidesToShow: 5,
         },
       },
       {
-        breakpoint: 992,
+        breakpoint: 1158,
         settings: {
           slidesToShow: 4,
         },
@@ -73,23 +97,26 @@ export default function Accueil() {
       },
     ],
   };
-  
+
   return (
     <>
       <Header />
-      {error ? ( /*Condition ternaire pour gérer l'erreur au cas ou l'appel api échoue */
-        <p>{error}</p>
-      ) : (
+      {/*Condition ternaire pour gérer l'erreur au cas ou l'appel api échoue */}
+      {error  ? (
+        <p>{errorMessage}</p>
+      ) : ""}
         <>
-          <div className='slider_container'>
-            <h2>Les 20 films les mieux notés</h2>
-                    <div>  <Slider {...settings}>
-            {display}
-            
-            </Slider></div>
+          <div className="slider_wrapper">
+            <div className="slider_container">
+              <Helmet>
+                <title>Accueil</title>
+              </Helmet>
+                <h2>Les 20 films les mieux notés</h2>{" "}
+                  <Slider {...settings}>{display}</Slider>
+            </div>
           </div>
         </>
-      )}
+      
     </>
   );
-};
+}
