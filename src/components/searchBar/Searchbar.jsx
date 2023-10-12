@@ -10,10 +10,10 @@ const searchBtn =(e) => {
     console.log("Recherche de" + searchName)
 }
   return (
-    <div className="search_bar">
+    <div className="search_bar_container">
       <form action="" className="form">
         <input type="text"
-        placeholder="Taper votre film... "
+        placeholder="Rechercher votre film ici... "
         value = {searchName}
         onChange={(e) =>{setSearchName(e.target.value)}}
         

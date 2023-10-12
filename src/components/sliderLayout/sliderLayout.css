@@ -1,0 +1,23 @@
+.slider_container {
+ 
+    padding: 4rem 3rem;
+    width: 100%;
+  }
+  
+  .slider_container > h2 {
+    padding-bottom: 1rem;
+  }
+  
+  .slick-next:before,
+  .slick-prev:before {
+    background-color: hsla(0, 69%, 48%, 0);
+    color: var(--primary) !important;
+  
+  }
+  
+  .slick-arrow:before{
+   font-size: 30px !important;
+  
+  }
+  
+  
