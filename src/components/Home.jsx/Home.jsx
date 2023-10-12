@@ -21,10 +21,16 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
+
+         // Récupérez les films les mieux notés
         const response = await fetch("https://api.tvmaze.com/shows?q=rating");
 
         const result = await response.json();
         setTopRatedMovies(result);
+        console.log(result)
+
+
+        
       } catch (error) {
         setError(true);
         setErrorMessage(
@@ -65,7 +71,7 @@ export default function Home() {
         <div className="grid_wrapper">
           <div className="left_txt">
             <h2>
-              Regardez vos <br/> films préféré <br/>entre <span>Lemoniens </span>!
+              Regardez vos <br/> films préférés <br/>entre <span>Lemoniens </span>!
             </h2>
           </div>
           <div className="right_img">
@@ -81,6 +87,9 @@ export default function Home() {
             ))}
           </Slider>
         </div>
+
+
+        
       </section>
     </>
   );

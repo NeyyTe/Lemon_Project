@@ -45,11 +45,12 @@
 .input_button {
   padding: 0.625rem;
   border-radius: 0 0.9rem 0.9rem 0;
-color: var(--white);
+color: var(--text);
 font-weight: 600;
 background-color: var(--primary);
 cursor: pointer;
 outline:1px solid var(--primary);
+
 }
 
 

@@ -17,24 +17,28 @@ const SliderLayout = {
         breakpoint: 1610,
         settings: {
           slidesToShow: 5,
+          slidesToScroll: 5
         },
       },
       {
         breakpoint: 1158,
         settings: {
           slidesToShow: 4,
+          slidesToScroll: 4
         },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 3,
+          slidesToScroll: 3
         },
       },
       {
         breakpoint: 576,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 2
         },
       },
     ],
