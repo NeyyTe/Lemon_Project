@@ -16,6 +16,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+ background-color: var(--background);
 }
 
 img,
@@ -37,7 +38,7 @@ h6 {
   word-break: break-word; /* Garde le texte dans son conteneur et applique la césure par mots entier*/
 }
 
-h1,h2{
+h1,h3{
  
   font-family: "Cinzel Decorative", cursive;
 }
@@ -48,17 +49,14 @@ p{
 }
 
 :root {
-  --white: #fff;
-  --black: #000;
-  --lemon : #abcc00;
-  --blue : #131136
 
   --text: hsl(184, 60%, 95%);
 --background: hsl(183, 92%, 5%);
 --primary: hsl(183, 59%, 24%);
 --secondary: hsl(357, 85%, 45%);
 --accent: hsl(183, 59%, 49%);
-
+--black : hsl(0, 0%, 0%);
+--primaryBrighter: hsl(182, 66%, 15%);
 }
 
 ::-webkit-scrollbar {
@@ -66,13 +64,13 @@ p{
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px rgb(0, 0, 0);
+  box-shadow: inset 0 0 5px var(--black);
   background-color: var(--black);
   word-break: break-word;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--lemon);
+  background: var(--accent);
   border-radius: 10px;
   transition: all 2s ease;
 }

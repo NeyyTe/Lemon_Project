@@ -1,20 +1,22 @@
 .slider_container {
  
-    padding: 4rem 3rem;
+   padding: 0 10%;
     width: 100%;
   }
   
-  .slider_container > h2 {
+  .slider_container > h3 {
     padding-bottom: 1rem;
+    color: var(--text);
+    font-size: 1.4rem;
   }
   
   .slick-next:before,
   .slick-prev:before {
-    background-color: hsla(0, 69%, 48%, 0);
-    color: var(--primary) !important;
+   
+    color: var(--accent) !important;
   
   }
-  
+
   .slick-arrow:before{
    font-size: 30px !important;
   

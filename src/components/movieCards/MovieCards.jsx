@@ -1,13 +1,15 @@
 import React from "react";
-import './movieCards.css'
+import "./movieCards.css";
 
 const MovieCards = ({ movie }) => {
   return (
     <div key={movie.id} className="movie_cards_container">
       <img src={movie.image.medium} alt={movie.name} />
-      <p>
-        {movie.name} {movie.rating.average}
-      </p>
+      <div className="bottom_card">
+        <p>{movie.name}</p>
+        <hr />
+        <p>⭐{movie.rating.average}</p>
+      </div>
     </div>
   );
 };

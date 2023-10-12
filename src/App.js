@@ -1,8 +1,10 @@
 import React from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Accueil from "./pages/accueil/Accueil";
-import Films from "./pages/films/Films";
-import Details from "./pages/détails/Details";
+
+
+import AccueilPage from "./pages/accueil/AccueilPage";
+import DetailsPage from "./pages/détails/DetailsPage";
+import FilmsPage from "./pages/films/FilmsPage";
 
 function App() {
   return(
@@ -10,9 +12,9 @@ function App() {
 
 <BrowserRouter>
 <Routes>
-  <Route path="/" element={<Accueil />}/>
-  <Route path="/films" element={<Films />}/>
-  <Route path="/details" element={<Details />}/>
+  <Route path="/" element={<AccueilPage />}/>
+  <Route path="/films" element={<FilmsPage />}/>
+  <Route path="/details" element={<DetailsPage />}/>
 </Routes>
 
 </BrowserRouter>

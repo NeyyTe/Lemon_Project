@@ -1,15 +1,19 @@
-import "./accueil.css";
-import Header from "../../components/header/Header";
-import MovieCards from "../../components/movieCards/MovieCards";
-import SliderLayout from "../../components/sliderLayout/SliderLayout";
-
 import React, { useEffect, useState } from "react";
+import "./home.css";
+import cinema from "./images/cinema.png";
+
+// Imports des composants
+import MovieCards from "../movieCards/MovieCards";
+import SliderLayout from "../sliderLayout/SliderLayout";
+
+import { Helmet } from "react-helmet"; // Pour gérer dynamiquement les titres dans les onglets
+
+//Import Bibliotheque Slicker carousel
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Helmet } from "react-helmet"; // Pour gérer dynamiquement les titres dans les onglets
 
-export default function Accueil() {
+export default function Home() {
   const [topRatedMovies, setTopRatedMovies] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(false);
@@ -49,30 +53,35 @@ export default function Accueil() {
     }
   }
 
-  
-
   return (
     <>
-      <Header />
       {/*Condition ternaire pour gérer l'erreur au cas ou l'appel api échoue */}
       {error ? <p>{errorMessage}</p> : ""}
-      <>
-        <div>
-          <Helmet>
-            <title>Accueil</title>
-          </Helmet>
 
-          <div className="slider_container">
-            <h2>Les 20 films les mieux notés</h2>{" "}
-            
-            <Slider {...SliderLayout}>
-              {topRating.map((movie) => (
-                <MovieCards key={movie.id} movie={movie}></MovieCards>
-              ))}
-            </Slider>
+      <section className="container">
+        <Helmet>
+          <title>Accueil</title>
+        </Helmet>
+        <div className="grid_wrapper">
+          <div className="left_txt">
+            <h2>
+              Regardez vos <br/> films préféré <br/>entre <span>Lemoniens </span>!
+            </h2>
+          </div>
+          <div className="right_img">
+            <img src={cinema} alt="cinema_image" />
           </div>
         </div>
-      </>
+
+        <div className="slider_container">
+          <h3>Les mieux notés</h3>{" "}
+          <Slider {...SliderLayout}>
+            {topRating.map((movie) => (
+              <MovieCards key={movie.id} movie={movie}></MovieCards>
+            ))}
+          </Slider>
+        </div>
+      </section>
     </>
   );
 }

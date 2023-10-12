@@ -7,7 +7,7 @@ export default function Header() {
   return (
     <>
       <header className="header">
-        <Link to ="/"> <h1>Lemon</h1> </Link>
+        <Link to ="/"> <h1>Lemonflix</h1> </Link>
         <nav className="nav_links">
             <ul>
                 <li><NavLink to="/">Accueil</NavLink></li>
