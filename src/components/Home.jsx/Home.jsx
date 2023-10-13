@@ -13,8 +13,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-export default function Home() {
-  const [topRatedMovies, setTopRatedMovies] = useState("");
+const Home = () => {
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [horrorMovies, setHorrorMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(false);
@@ -22,17 +22,11 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Récupére les films les mieux notés
         const response = await fetch("https://api.tvmaze.com/shows?q=rating");
-
         const result = await response.json();
         setTopRatedMovies(result);
-        console.log(result);
 
-        // Récupére les 20 derniers films de la catégorie "Horreur"
-        const horrorResponse = await fetch(
-          "https://api.tvmaze.com/shows?q=horror&sort=desc&limit=20"
-        );
+        const horrorResponse = await fetch("https://api.tvmaze.com/shows");
         const horrorResult = await horrorResponse.json();
         setHorrorMovies(horrorResult);
       } catch (error) {
@@ -52,21 +46,13 @@ export default function Home() {
 
   const movieFilter = [...topRatedMovies];
 
-  movieFilter.sort((a, b) => {
-    return b["rating"]["average"] - a["rating"]["average"];
-  });
+  movieFilter.sort((a, b) => b.rating.average - a.rating.average);
 
-  const topRating = [];
-  for (let i = 0; i < movieFilter.length; i++) {
-    if (i <= 20) {
-      topRating.push(movieFilter[i]);
-    }
-  }
+  const topRating = movieFilter.slice(0, 20);
 
   return (
     <>
-      {/*Condition ternaire pour gérer l'erreur au cas ou l'appel api échoue */}
-      {error ? <p>{errorMessage}</p> : ""}
+      {error && <p>{errorMessage}</p>}
 
       <section className="container">
         <Helmet>
@@ -85,23 +71,26 @@ export default function Home() {
         </div>
 
         <div className="slider_container">
-          <h3>Les mieux notés</h3>{" "}
+          <h3>Les mieux notés</h3>
           <Slider {...SliderLayout}>
             {topRating.map((movie) => (
-              <MovieCards key={movie.id} movie={movie}></MovieCards>
+              <MovieCards key={movie.id} movie={movie} />
             ))}
           </Slider>
         </div>
 
         <div className="slider_container">
-          <h3>Les derniers films d'horreur</h3>{" "}
+          <h3>Les derniers films d'horreur</h3>
           <Slider {...SliderLayout}>
             {horrorMovies.map((movie) => (
-              <MovieCards key={movie.id} movie={movie}></MovieCards>
+              <MovieCards key={movie.id} movie={movie} />
             ))}
           </Slider>
         </div>
       </section>
     </>
   );
-}
+};
+
+export default Home;
+         
