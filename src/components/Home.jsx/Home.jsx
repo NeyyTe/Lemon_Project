@@ -22,10 +22,13 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
+        //Appel API pour les mieux notés
         const response = await fetch("https://api.tvmaze.com/shows?q=rating");
         const result = await response.json();
-        setTopRatedMovies(result);
-
+        if (Array.isArray(result) && result.length > 0) {
+          setTopRatedMovies(result);
+        }
+        //Appel API pour les films d'horreur
         const horrorResponse = await fetch("https://api.tvmaze.com/shows");
         const horrorResult = await horrorResponse.json();
         setHorrorMovies(horrorResult);
@@ -44,11 +47,14 @@ const Home = () => {
     fetchData();
   }, []);
 
+
   const movieFilter = [...topRatedMovies];
 
   movieFilter.sort((a, b) => b.rating.average - a.rating.average);
 
   const topRating = movieFilter.slice(0, 20);
+
+  
 
   return (
     <>
@@ -93,4 +99,3 @@ const Home = () => {
 };
 
 export default Home;
-         
