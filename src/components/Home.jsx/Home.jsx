@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./home.css";
-import cinema from "./images/cinema.png";
+import cinemaMidjourneyWebp from "./images/cinemaMidjourneyWebp.webp";
 
 // Imports des composants
 import MovieCards from "../movieCards/MovieCards";
@@ -29,9 +29,25 @@ const Home = () => {
           setTopRatedMovies(result);
         }
         //Appel API pour les films d'horreur
+     
         const horrorResponse = await fetch("https://api.tvmaze.com/shows");
         const horrorResult = await horrorResponse.json();
         setHorrorMovies(horrorResult);
+
+        const horrorMoviesFiltered = horrorResult.filter((el) =>
+        el.genres.includes("Horror")
+      );
+
+      horrorMoviesFiltered.sort((a, b) => {
+        // Assurez-vous que les dates sont au format ISO (ou d'un autre format approprié)
+        const dateA = new Date(a.premiered);
+        const dateB = new Date(b.premiered);
+        return dateB - dateA; // Tri par ordre décroissant
+      });
+
+
+      setHorrorMovies(horrorMoviesFiltered);
+        // console.log(horrorResult,'HorrorResult')
       } catch (error) {
         setError(true);
         setErrorMessage(
@@ -47,18 +63,15 @@ const Home = () => {
     fetchData();
   }, []);
 
-
-  const movieFilter = [...topRatedMovies];
-
-  movieFilter.sort((a, b) => b.rating.average - a.rating.average);
-
-  const topRating = movieFilter.slice(0, 20);
-
+  const movieFilter = [...topRatedMovies]; // Destructuring
   
+  movieFilter.sort((a, b) => b.rating.average - a.rating.average); // Triage par ordre décroissant en fonction de la note
 
+  const topRating = movieFilter.slice(0, 19); // Renvoie une copie du tableau d'origine, ici les 20 premiers
+  
   return (
     <>
-      {error && <p>{errorMessage}</p>}
+      {error && <p style={{ color: "red" }}>{errorMessage}</p>}
 
       <section className="container">
         <Helmet>
@@ -72,7 +85,7 @@ const Home = () => {
             </h2>
           </div>
           <div className="right_img">
-            <img src={cinema} alt="cinema_image" />
+            <img src={cinemaMidjourneyWebp} alt="cinema_image" />
           </div>
         </div>
 

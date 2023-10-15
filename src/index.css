@@ -17,6 +17,7 @@ body {
   width: 100%;
   height: 100%;
  background-color: var(--background);
+ overflow-y: scroll; /* Empêche la ScrollBar de pousser le contenu légérement à gauche lors de son apparition*/
 }
 
 img,
@@ -35,7 +36,7 @@ h3,
 h4,
 h5,
 h6 {
-  word-break: break-word; /* Garde le texte dans son conteneur et applique la césure par mots entier*/
+  word-break: keep-all; /* Pour empecher la césure */
 }
 
 h1,h3{

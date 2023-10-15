@@ -6,8 +6,8 @@ const SliderLayout = {
     infinite: true, // Boucle infinie du slider
     lazyLoad: "ondemand", // LazyLoading des images dans le slider
 
-    slidesToShow: 7, // Nombres d'éléments affiché
-    slidesToScroll: 7, // Nombres d'éléments affiché lors d'un scroll avec les flèches ou drag a la souris
+    slidesToShow: 5, // Nombres d'éléments affiché
+    slidesToScroll: 5, // Nombres d'éléments affiché lors d'un scroll avec les flèches ou drag a la souris
     speed: 800, // Vitesse de transition ( en ms )
     arrows: true, // Affichage des fléches de navigation
 
