@@ -1,28 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import "./searchBar.css";
 
-const SearchBar = () => {
-  const [searchName, setSearchName] = useState("");
-  const searchBtn = (e) => {
-    e.preventDefault(); // Pour empêcher le rechargement de la page
-    console.log("Recherche de" + searchName);
-  };
+const SearchBar = ({textSearchInput, setSearchInput}) => {
+
   return (
     <div className="search_bar_container">
-      <form action="" method="get" className="form">
         <input
+        className="input"
           type="text"
           placeholder="Rechercher votre film ici... "
-          value={searchName}
+          value={textSearchInput}
           onChange={(e) => {
-            setSearchName(e.target.value);
+            setSearchInput(e.target.value);
           }}
         />
-
-        <button className="input_button" onClick={searchBtn}>
-          Rechercher
-        </button>
-      </form>
     </div>
   );
 };
