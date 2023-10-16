@@ -2,18 +2,17 @@ import React from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 
-import AccueilPage from "./pages/accueil/AccueilPage";
-import DetailsPage from "./pages/détails/DetailsPage";
-import FilmsPage from "./pages/films/FilmsPage";
-
+import LandingPage from "./pages/landing/LandingPage";
+import DetailsPage from "./pages/details/DetailsPage";
+import MoviePage from "./pages/movie/MoviePage";
 function App() {
   return(
 <>
 
 <BrowserRouter>
 <Routes>
-  <Route path="/" element={<AccueilPage />}/>
-  <Route path="/films" element={<FilmsPage />}/>
+  <Route path="/" element={<LandingPage />}/>
+  <Route path="/films" element={<MoviePage />}/>
   <Route path="/details" element={<DetailsPage />}/>
 </Routes>
 
