@@ -13,7 +13,7 @@ const MovieCards = ({ movie }) => {
       <div className="bottom_card">
         <p>{movie.name}</p>
         <hr />
-        <p>⭐{movie?.rating?.average} - {movie?.premiered}</p>
+        <p>⭐{movie?.rating?.average} / {movie?.premiered}</p>
         <p>{movie?.genres}</p>
 
       </div>

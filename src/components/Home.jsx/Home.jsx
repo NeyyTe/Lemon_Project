@@ -67,7 +67,7 @@ const Home = () => {
   
   movieFilter.sort((a, b) => b.rating.average - a.rating.average); // Triage par ordre décroissant en fonction de la note
 
-  const topRating = movieFilter.slice(0, 19); // Renvoie une copie du tableau d'origine, ici les 20 premiers
+  const topRating = movieFilter.slice(0, 20); // Renvoie une copie du tableau d'origine, ici les 20 premiers
   
   return (
     <>

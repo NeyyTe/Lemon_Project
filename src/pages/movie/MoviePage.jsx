@@ -11,9 +11,7 @@ export default function MoviePage() {
   const [textSearchInput, setSearchInput] = useState("");
   const [shows, setShows] = useState([]);
 
- 
-
-  console.log(shows);
+  // console.log(shows);
 
   useEffect(() => {
 
