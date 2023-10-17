@@ -40,7 +40,7 @@ h6 {
 }
 
 h1,h3{
- 
+ color: var(--text);
   font-family: "Cinzel Decorative", cursive;
 }
 
@@ -52,12 +52,12 @@ p{
 :root {
 
   --text: hsl(184, 60%, 95%);
---background: hsl(183, 92%, 5%);
+--background: #011718;
 --primary: hsl(183, 59%, 24%);
 --secondary: hsl(357, 85%, 45%);
 --accent: hsl(183, 59%, 49%);
 --black : hsl(0, 0%, 0%);
---primaryBrighter: hsl(182, 66%, 15%);
+--primaryBrighter: #0d3e3f;
 }
 
 ::-webkit-scrollbar {

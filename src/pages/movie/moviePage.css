@@ -1,13 +1,22 @@
 .film_container {
   width: 100%;
+
   display: flex;
   flex-direction: column;
+
+
   padding: 0 2%;
 }
 
 .shows {
-  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  place-items: center;
+  justify-items: center;
+padding-bottom: 3rem;
 }
+
+.mostRecentMovies{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  justify-items: center;
+ }

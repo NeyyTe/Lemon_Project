@@ -1,6 +1,6 @@
 .container {
   margin: 5rem 0;
-  background-color: var(--background);
+
 }
 
 .container > div {
@@ -10,16 +10,14 @@
 .grid_wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  grid-template-rows: 1fr;
   align-items: center;
+
   padding: 0 10%;
 }
 
 .left_txt > h2 {
   font-family: "Poppins", sans-serif;
-
   font-size: clamp(1.5rem, 1.6585365853658536rem + 1.951219512195122vw, 4rem);
-
   text-transform: capitalize;
   color: var(--text);
   letter-spacing: 5px;
@@ -27,7 +25,6 @@
 
 .left_txt > h2 span {
   background: linear-gradient(120deg, var(--primary), var(--accent));
- 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

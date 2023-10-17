@@ -28,21 +28,23 @@ const Home = () => {
         if (Array.isArray(result) && result.length > 0) {
           setTopRatedMovies(result);
         }
+
         //Appel API pour les films d'horreur
-     
         const horrorResponse = await fetch("https://api.tvmaze.com/shows");
         const horrorResult = await horrorResponse.json();
         setHorrorMovies(horrorResult);
+        // console.log(horrorResult, "Avant le tri \"horror")
 
         const horrorMoviesFiltered = horrorResult.filter((el) =>
         el.genres.includes("Horror")
-      );
+      );   
+      // console.log(horrorMoviesFiltered, "Apres le tri \"horror")
 
       horrorMoviesFiltered.sort((a, b) => {
-        // Assurez-vous que les dates sont au format ISO (ou d'un autre format approprié)
+       
         const dateA = new Date(a.premiered);
         const dateB = new Date(b.premiered);
-        return dateB - dateA; // Tri par ordre décroissant
+        return dateB - dateA; // Tri par ordre décroissant par date de sortie
       });
 
 
