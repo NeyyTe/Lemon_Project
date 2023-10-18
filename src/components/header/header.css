@@ -1,34 +1,107 @@
-.header{
-    width: 100%;
-    min-height: 10dvh;
-    padding: 0 10%;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-   
-    -webkit-box-shadow: 0px 7px 22px -4px #c5c4c4; 
-box-shadow: 0px 7px 15px -4px var(--accent);
+.header {
+  width: 100%;
+  min-height: 10dvh;
+  padding: 0 10%;
 
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-.header h1{
-    color:var(--accent);
-    font-size: clamp(1.5rem, 0.25rem + 3vw, 2.5rem);
-   
-}
 
-.nav_links ul{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+top: 0;
+z-index: 10;
+  -webkit-box-shadow: 0px 7px 22px -4px #c5c4c4;
+  box-shadow: 0px 7px 15px -4px var(--accent);
  
 }
 
-.nav_links ul li a {
-    color:var(--text);
-font-size: 1.1rem;
-   
- font-family: "Poppins", sans-serif;
+.header h1 {
+  color: var(--accent);
+  font-size: clamp(1.5rem, 0.25rem + 3vw, 2.5rem);
 }
 
+.nav_links ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav_links ul li a {
+  color: var(--text);
+  font-size: 1.1rem;
+
+  font-family: "Poppins", sans-serif;
+}
+
+/* =================================================
+             Menu_Hamburger ( Open & Close )
+================================================= */
+.menu {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 11; color: white;
+}
+
+.menu .hamburger,
+.menu .close {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: none;
+}
+
+.menu .hamburger.active,
+.menu .close.active {
+  display: block;
+}
+
+.nav_links .icons {
+  display: none;
+}
+
+/*Responsive Hamburger Menu */
+@media all and (max-width: 1024px) {
+  .nav_links .icons {
+    display: block;
+  }
+
+  .span_links {
+    display: none;
+  }
+
+  .nav_links ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    
+    left: 0;
+    right: 0;
+    bottom: 0;
+  
+  }
+
+  .nav_links{
+    height: 100dvh;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .nav_links .menu {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .nav_links .icons {
+    display: none;
+  }
+
+
+}

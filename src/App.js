@@ -1,7 +1,6 @@
 import React from "react";
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
-
 import LandingPage from "./pages/landing/LandingPage";
 import DetailsPage from "./pages/details/DetailsPage";
 import MoviePage from "./pages/movie/MoviePage";
