@@ -1,12 +1,14 @@
 import React from "react";
 import "./movieCards.css";
-
+import { Link } from "react-router-dom";
 const MovieCards = ({ movie }) => {
   if (Array.isArray(movie.genres)) {
     movie.genres = movie.genres.join(", ");
   }
 
   return (
+    
+      <Link to='/details' >
     <div key={movie.id} className="movie_cards_container">
       <div >
         <img
@@ -28,6 +30,7 @@ const MovieCards = ({ movie }) => {
 
       </div>
     </div>
+     </Link>
   );
 };
 

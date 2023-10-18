@@ -65,7 +65,7 @@ export default function MoviePage() {
         setSearchInput={setSearchInput}
       />
       {error && <p className="errorMessage">{errorMessage}</p>}
-      <div className="film_container">
+      <div onClic  className="film_container">
         <Helmet>
           <title>Films</title>
         </Helmet>
@@ -87,7 +87,7 @@ export default function MoviePage() {
           </div>
           {visibleMovies < listShows.length && (
             <button className="buttonLoadMore" onClick={loadMoreMovies}>
-              Recharger plus
+              Charger plus
             </button>
           )}
         </div>

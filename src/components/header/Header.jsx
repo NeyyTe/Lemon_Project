@@ -14,7 +14,6 @@ export default function Header() {
             <ul>
                 <li><NavLink to="/">Accueil</NavLink></li>
                 <li><NavLink to="/films">Films</NavLink></li>
-                <li><NavLink to="/details">Détails</NavLink></li>
       
             </ul>
         </nav>
