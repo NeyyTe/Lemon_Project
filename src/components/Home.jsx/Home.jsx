@@ -24,7 +24,7 @@ const Home = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  
    
 
     const fetchData = async () => {
@@ -63,7 +63,7 @@ const Home = () => {
         );
       }
     };
-
+    useEffect(() => {
     fetchData();
   }, []);
 
@@ -87,7 +87,9 @@ const Home = () => {
             </h2>
           </div>
           <div className="right_img">
-            <img src={cinemaMidjourneyWebp} alt="cinema_image" />
+            <img 
+           
+            src={cinemaMidjourneyWebp} alt="cinema_image" />
           </div>
         </div>
 

@@ -42,7 +42,7 @@ export default function MoviePage() {
       } catch (error) {
         setError(true);
         setErrorMessage(
-          "Impossible de charger les films pour le moment. Veuillez réessayer plus tard."
+          "Impossible de charger les films pour le moment. Veuillez réessayer."
         );
         console.log(error);
       }
@@ -65,7 +65,7 @@ export default function MoviePage() {
         setSearchInput={setSearchInput}
       />
       {error && <p className="errorMessage">{errorMessage}</p>}
-      <div onClic  className="film_container">
+      <div className="film_container">
         <Helmet>
           <title>Films</title>
         </Helmet>

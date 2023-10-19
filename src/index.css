@@ -54,10 +54,9 @@ p{
   --text: hsl(184, 60%, 95%);
 --background: hsl(183, 95%, 7%);
 --primary: hsl(183, 59%, 24%);
---secondary: hsl(357, 85%, 45%);
+--primaryBrighter: hsl(181, 66%, 15%);
 --accent: hsl(183, 59%, 49%);
 --black : hsl(0, 0%, 0%);
---primaryBrighter: hsl(181, 66%, 15%);
 }
 
 ::-webkit-scrollbar {

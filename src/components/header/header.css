@@ -2,7 +2,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  min-height: 10dvh;
   padding: 0 10%;
 
   color: white;
@@ -10,9 +10,9 @@ header {
   box-shadow: 0px 7px 15px -4px var(--accent);
 }
 
-
 header nav ul {
   display: flex;
+  justify-content: space-between;
   gap: 2rem;
 }
 
@@ -24,76 +24,72 @@ nav a {
 }
 
 header h1 {
-    color: var(--accent);
-    font-size: clamp(1.5rem, 0.25rem + 3vw, 2.5rem);
-  }
-  
-header .nav-btn {
+  color: var(--accent);
+  font-size: clamp(1.5rem, 0.25rem + 3vw, 2.5rem);
+}
 
+header .nav-btn {
   cursor: pointer;
   background: transparent;
   color: inherit;
-  visibility: hidden;
-display: none;
   
+  display: none;
 }
 
 header div,
 nav {
   display: flex;
   align-items: center;
-  
 }
 
-.icons{
-    display: none;
-   
+.icons,
+.lemonflixHamburger {
+  display: none;
 }
 
-
-@media only screen and (max-width : 768px){
-     .icons {
-        display: block;
-      }
-    
-      .span_links {
-        display: none;
-      }
-}
-
-
-@media only screen and (max-width: 425px) {
-  header .nav-btn {
-    visibility: visible;
-    opacity: 1;
+@media only screen and (max-width: 768px) {
+  .icons {
     display: block;
-   
   }
 
   .span_links {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  header .nav-btn {
+   
+    opacity: 1;
     display: block;
   }
 
-  .icons{
+  .span_links,
+  .lemonflixHamburger {
+    display: block;
+  }
+
+  .icons {
     display: none;
   }
   header nav {
     position: fixed;
     top: -100vh;
     left: 0;
+
     height: 100%;
     width: 100%;
-    
-    flex-direction: column;
-   justify-content: center;
+
+    justify-content: center;
 
     gap: 1.5rem;
-  transition: 1s ease-out;
+   transition: 0.7s ;
   }
 
-  header ul {
+  header nav ul {
     flex-direction: column;
-    justify-content: center;
+    
+
     align-items: center;
   }
 
@@ -101,13 +97,12 @@ nav {
     background-color: var(--primaryBrighter);
     transform: translateY(100vh);
     z-index: 2;
-   
   }
 
   nav .nav-close-btn {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 30px;
+    right: 50px;
   }
 
   nav a {
