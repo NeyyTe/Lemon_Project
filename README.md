@@ -1,4 +1,4 @@
-  
+   <img width="75" src= "https://www.activateurdeprogres.fr/sites/default/files/activator_form/8iweJYPphuYFRF37XZ9p5uUV.png">     
 &nbsp;  
 
 # **Projet LemonFlix**  
@@ -23,9 +23,9 @@ Follow those 3 steps :
 2. ### **Installation**
 
 * #### Clone the GitHub repository localy on your pc with GitBash :  
- ```git clone https://github.com/NeyyTe/Lemon_test.git```  
+**```git clone https://github.com/NeyyTe/Lemon_test.git```**
 
- then `cd Lemon_test` and open it with VsCode with `code .`
+ then **`cd Lemon_test`** and open it with VsCode with **`code .`**
 
  * #### Dependencies :
   
@@ -44,4 +44,3 @@ The browser will automatically open at the following URL : `http://localhost:300
 
 ### **Now you are ready to go !**
 
- <img width="75" src= "https://www.activateurdeprogres.fr/sites/default/files/activator_form/8iweJYPphuYFRF37XZ9p5uUV.png">     
