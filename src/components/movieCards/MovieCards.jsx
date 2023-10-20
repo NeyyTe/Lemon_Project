@@ -8,7 +8,7 @@ const MovieCards = ({ movie }) => {
 
   return (
     
-      <Link to='/details' >
+      <Link to={`/details/${movie.id}`} >
     <div key={movie.id} className="movie_cards_container">
       <div >
         <img

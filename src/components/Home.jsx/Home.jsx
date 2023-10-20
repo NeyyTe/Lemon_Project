@@ -82,7 +82,7 @@ const Home = () => {
         <div className="grid_wrapper">
           <div className="left_txt">
             <h2>
-              Regardez vos films préférés 
+              Regardez vosdd films préférés 
               entre <span>Lemoniens </span>!
             </h2>
           </div>

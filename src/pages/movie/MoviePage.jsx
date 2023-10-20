@@ -31,14 +31,16 @@ export default function MoviePage() {
         const movieList = await fetch("https://api.tvmaze.com/shows");
         const movieListResult = await movieList.json();
         setListShows(movieListResult);
+console.log(movieListResult, "avant le tri")
 
         movieListResult.sort((a, b) => {
           const dateA = new Date(a.premiered);
           const dateB = new Date(b.premiered);
           return dateB - dateA; // Tri par ordre décroissant
         });
-
+        
         setListShows(movieListResult);
+        console.log(movieListResult, "APRES TRI DATE")
       } catch (error) {
         setError(true);
         setErrorMessage(

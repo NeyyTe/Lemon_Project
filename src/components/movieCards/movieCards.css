@@ -25,13 +25,13 @@ a {
   flex-direction: column;
   justify-content: center;
 
-  padding: 0.5rem 0.625rem;
+  padding:1rem 0.625rem;
   border-radius: 0 0 10px 10px;
   background-color: var(--primaryBrighter);
 }
 
 .bottom_card > * {
-  margin: 10px;
+  margin: 7px;
 }
 
 .bottom_card p {
@@ -42,6 +42,7 @@ a {
   word-break: break-word;
   letter-spacing: 0.5px;
   font-size: 1rem;
+ 
 }
 
 .bottom_card hr {
