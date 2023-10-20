@@ -12,7 +12,8 @@ header {
 
 header nav ul {
   display: flex;
-  justify-content: space-between;
+  
+
   gap: 2rem;
 }
 
@@ -50,6 +51,7 @@ nav {
 @media only screen and (max-width: 768px) {
   .icons {
     display: block;
+   
   }
 
   .span_links {
@@ -101,8 +103,8 @@ nav {
 
   nav .nav-close-btn {
     position: absolute;
-    top: 30px;
-    right: 50px;
+    top: 20px;
+    right: 40px;
   }
 
   nav a {

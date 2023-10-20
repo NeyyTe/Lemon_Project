@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
 
-  padding: 0.4rem;
+  padding: 0.3rem;
   width: 100%;
 
 }
@@ -50,5 +50,9 @@ a {
 /* .movie_cards_container > img:hover {
 } */
 
-@media only screen and (max-width : )
+@media only screen and (max-width : 515px){
+  .bottom_card p {
+    font-size: 0.8rem;
+  }  
+}
 
