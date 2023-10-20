@@ -1,11 +1,10 @@
- <img width="75" src= "https://www.activateurdeprogres.fr/sites/default/files/activator_form/8iweJYPphuYFRF37XZ9p5uUV.png">     
-
-   &nbsp;
+  
+&nbsp;  
 
 # **Projet LemonFlix**  
  A fluid, innovative web interface for customers that will
 allow them to organize better the shows that they want to watch.
-### THIS PROJECT USE :
+### **THIS PROJECT USE** :
 
 **ReactJS** framework for Front Interface and the datas API are based on [TVMazeAPI](https://www.tvmaze.com/api)
 
@@ -39,8 +38,10 @@ Before running, install all dependencies -> New Terminal and apply the command :
 Once you are on the folder root (Lemon_test)  
 
 &nbsp;
- `npm start`  
+ **`npm start`** 
 
 The browser will automatically open at the following URL : `http://localhost:3000`
 
-Now you are ready to go ! 
+### **Now you are ready to go !**
+
+ <img width="75" src= "https://www.activateurdeprogres.fr/sites/default/files/activator_form/8iweJYPphuYFRF37XZ9p5uUV.png">     
