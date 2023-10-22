@@ -34,7 +34,7 @@ a {
 
   padding: 1rem 0.625rem;
   border-radius: 0 0 10px 10px;
-  background-color: var(--primaryBrighter);
+  background-color: var(--secondary);
 }
 
 .bottom_card > * {

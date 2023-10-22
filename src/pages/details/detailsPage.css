@@ -1,0 +1,105 @@
+.movieDetailsContainer {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 0 2rem 0;
+}
+
+.movieDetailsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--text);
+  width: 100%;
+}
+
+.movieDetails {
+  width: 60%;
+  display: flex;
+  gap: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.movieDetailsLeft {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+.movieDetailsRight h2 {
+  font-size: 3rem;
+
+  letter-spacing: 2px;
+}
+
+.movieDetailsLeft img {
+  min-width: 250px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.movieDetailsRight {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.movieDetailsRightContent > * {
+  margin: 1.5rem 0;
+}
+
+.showInfos {
+  background: var(--secondary);
+  color: var(--text);
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+
+  /*Glassmorphism card*/
+  background: rgba(171, 171, 171, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.4px);
+  -webkit-backdrop-filter: blur(8.4px);
+}
+
+.showInfos hr {
+  border: 1px solid rgb(134, 134, 134);
+}
+
+.showInfos * p,
+.showInfos h3 {
+  margin: 0.7rem 0;
+}
+
+.showInfos a {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+.secCast {
+  color: var(--text);
+  padding: 0 10%;
+}
+
+.secCastGrid {
+  width: 100%;
+height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  margin: 1rem auto;
+  gap: 0.5rem;
+ 
+}
+
+.secCastGrid img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+ 
+}
+
+.secCastGrid p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    color:var(--accent);
+ 
+}

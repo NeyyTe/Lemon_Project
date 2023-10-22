@@ -8,6 +8,9 @@ header {
   color: white;
   -webkit-box-shadow: 0px 7px 22px -4px #c5c4c4;
   box-shadow: 0px 7px 15px -4px var(--accent);
+
+background-color: var(--background);
+ 
 }
 
 header nav ul {
@@ -17,13 +20,43 @@ header nav ul {
   gap: 2rem;
 }
 
-nav a {
+header nav a {
   font-size: 1.1rem;
   font-family: "Poppins", sans-serif;
   color: inherit;
   text-decoration: none;
+  position: relative;
 }
 
+header nav a:not(.active):before{
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  width: 0%;
+  height: 2px;
+
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transition: width 0.3s;
+  -webkit-transition: width 0.3s;
+  -moz-transition: width 0.3s;
+  -ms-transition: width 0.3s;
+  -o-transition: width 0.3s;
+}
+
+header nav a:hover:before{
+  width: 100%;
+}
+
+
+header nav a.active{
+  color: var(--accent);
+}
 header h1 {
   color: var(--accent);
   font-size: clamp(1.5rem, 0.25rem + 3vw, 2.5rem);
@@ -51,7 +84,6 @@ nav {
 @media only screen and (max-width: 768px) {
   .icons {
     display: block;
-   
   }
 
   .span_links {
@@ -61,7 +93,6 @@ nav {
 
 @media only screen and (max-width: 425px) {
   header .nav-btn {
-   
     opacity: 1;
     display: block;
   }
@@ -96,7 +127,7 @@ nav {
   }
 
   header .responsive_nav {
-    background-color: var(--primaryBrighter);
+    background-color: var(--secondary);
     transform: translateY(100vh);
     z-index: 2;
   }

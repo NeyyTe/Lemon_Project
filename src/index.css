@@ -16,7 +16,9 @@ html,
 body {
   width: 100%;
   height: 100%;
- background-color: var(--background);
+ 
+  background: rgb(13,63,63);
+  background: radial-gradient(circle, rgba(13,63,63,1) 0%, rgba(1,33,35,1) 73%);
  overflow-y: scroll; /* Empêche la ScrollBar de pousser le contenu légérement à gauche lors de son apparition*/
 }
 
@@ -52,9 +54,9 @@ p{
 :root {
 
   --text: hsl(184, 60%, 95%);
---background: hsl(183, 95%, 7%);
+--background: #012123;
 --primary: hsl(183, 59%, 24%);
---primaryBrighter: hsl(181, 66%, 15%);
+--secondary: hsl(180, 66%, 15%);
 --accent: hsl(183, 59%, 49%);
 --black : hsl(0, 0%, 0%);
 }

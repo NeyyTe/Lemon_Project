@@ -28,7 +28,8 @@ export default function MoviePage() {
             setShows(value.data);
           });
 
-        const movieList = await fetch("https://api.tvmaze.com/shows?page=288");
+        const movieList = await fetch("https://api.tvmaze.com/shows");
+        /*https://api.tvmaze.com/shows?page=288*/
         const movieListResult = await movieList.json();
         setListShows(movieListResult);
 
