@@ -10,7 +10,7 @@ const MovieCards = ({ movie }) => {
     
       <Link to={`/details/${movie.id}`} >
     <div key={movie.id} className="movie_cards_container">
-      <div >
+      <div className="top_card">
         <img
           src={
             movie.image

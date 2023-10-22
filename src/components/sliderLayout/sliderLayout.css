@@ -23,6 +23,14 @@
   
   }
 
+  
+.slick-slide {
+  padding: 0 0.4rem;
+}
+
+
+
+
 @media only screen and (max-width:360px){
   .slick-arrow:before{
     font-size: 20px !important;

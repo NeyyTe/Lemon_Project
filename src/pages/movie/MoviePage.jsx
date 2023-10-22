@@ -22,25 +22,23 @@ export default function MoviePage() {
       try {
         instance
           .get(
-            `https://api.tvmaze.com/search/shows?q=${textSearchInput}&page=0`
+            `https://api.tvmaze.com/search/shows?q=${textSearchInput}`
           )
           .then((value) => {
             setShows(value.data);
           });
 
-        const movieList = await fetch("https://api.tvmaze.com/shows");
+        const movieList = await fetch("https://api.tvmaze.com/shows?page=288");
         const movieListResult = await movieList.json();
         setListShows(movieListResult);
-console.log(movieListResult, "avant le tri")
 
         movieListResult.sort((a, b) => {
           const dateA = new Date(a.premiered);
           const dateB = new Date(b.premiered);
           return dateB - dateA; // Tri par ordre décroissant
         });
-        
+
         setListShows(movieListResult);
-        console.log(movieListResult, "APRES TRI DATE")
       } catch (error) {
         setError(true);
         setErrorMessage(

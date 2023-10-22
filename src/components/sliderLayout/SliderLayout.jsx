@@ -35,7 +35,7 @@ const SliderLayout = {
         },
       },
       {
-        breakpoint: 440,
+        breakpoint: 510,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1

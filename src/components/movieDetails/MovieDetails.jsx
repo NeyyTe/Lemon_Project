@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./movieDetails.css";
 import { useParams } from "react-router-dom";
 import { instance } from "../../api/axiosInstance";
-const MovieDetails = (props) => {
+const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null);
   const [loading, setLoading] = useState(true);
   const { id } = useParams();

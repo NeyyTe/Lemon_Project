@@ -15,29 +15,24 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-/**
- * The Home component fetches data from two different APIs and displays the top-rated movies and the latest horror movies in a slider layout.
- */
+
 const Home = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [horrorMovies, setHorrorMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(null);
 
-  
-   
-
     const fetchData = async () => {
       try {
         //Appel API pour les mieux notés
-        const response = await axios.get("https://api.tvmaze.com/shows?q=rating");
+        const response = await axios.get("https://api.tvmaze.com/shows");
         const result = response.data;
         if (Array.isArray(result) && result.length > 0) {
           setTopRatedMovies(result);
         }
 
         //Appel API pour les films d'horreur
-        const horrorResponse = await axios.get("https://api.tvmaze.com/shows");
+        const horrorResponse = await axios.get(`https://api.tvmaze.com/shows`);
         const horrorResult = horrorResponse.data;
         setHorrorMovies(horrorResult);
 
@@ -82,7 +77,7 @@ const Home = () => {
         <div className="grid_wrapper">
           <div className="left_txt">
             <h2>
-              Regardez vosdd films préférés 
+              Regardez vos films préférés 
               entre <span>Lemoniens </span>!
             </h2>
           </div>
