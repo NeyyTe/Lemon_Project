@@ -45,3 +45,13 @@ The browser will automatically open at the following URL : `http://localhost:300
 
 ### **Now you are ready to go !**  
 
+
+## **Limitations**
+
+  Toutes les consignes demandés ont été effectués avec succés, cependant je fais face à un problème au niveau des données que je reçois. Le endpoint "https://api.tvmaze.com/shows" renvoit une page de 250 résultats et je ne parviens pas à récuperer les données les plus récentes (qui ne comprend que les données datant de 2014 pour la page 0 par exemple) de même pour chercher des films par genres ( ex les films d'horreur les plus récents ).J'ai réfléchi à d'éventuelles solutions :
+
+ - il m'est possible de faire un appel de toutes les données mais la base de données étant trop conséquentes, il me parait difficile de toutes les retourner d'un coup sans avoir de problème de latence. Je me suis beaucoup documenté sur internet et les topics sur ce sujet qui beaucoup demandé, sans réel solution concrète.
+
+ -  J'ai tout de même pensé à trier par date ( dans mon cas 2023) cependant mettre en dur l'année me paraissait peu pertinent pour un site qui se veut dynamique.
+
+Je suis très interessé pour avoir une solution à ce problème, en attendant une réponse de votre part.

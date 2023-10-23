@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./moviePage.css";
 
+
 //Import des composants
 import Header from "../../components/header/Header";
 import MovieCards from "../../components/movieCards/MovieCards";

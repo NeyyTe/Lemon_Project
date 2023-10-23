@@ -14,7 +14,7 @@ const currentYear = getCurrentYear();
         </div>
         <div>
           <p>Copyright &copy; {currentYear} - All Rights Reserved</p>
-        </div>
+        </div>  
       </footer>
     
   );
