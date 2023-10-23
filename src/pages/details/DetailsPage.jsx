@@ -31,8 +31,16 @@ function DetailsPage() {
     fetchMovieDetails();
   }, []);
 
+  // if (loading) {
+  //   return <p>Chargement en cours...</p>;
   if (loading) {
-    return <p>Chargement en cours...</p>;
+    return <div className="loader">
+    <div className="bar" />
+    <div className="bar" />
+    <div className="bar" />
+    <div className="bar" />
+  </div>
+  
   } else {
     return (
       <>
