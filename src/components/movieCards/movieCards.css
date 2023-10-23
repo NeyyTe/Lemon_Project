@@ -1,31 +1,41 @@
-.movie_cards_container {
+.movieCardsContainer {
   display: flex;
   flex-direction: column;
 
   width: 100%;
   height: 100%;
   flex-grow: 1;
+overflow: hidden;
 }
 
-a {
+.movieCardsContainer img:hover{
+  
+  -ms-transform: scale(1.02) ; /* IE 9 */
+  -webkit-transform: scale(1.02);  /* Safari 3-8 */
+  transform: scale(1.05);
+  transition: 2s ease-in-out 2s;
+}
+
+.movieCardsLink {
   width: 100%;
   height: 100%;
 }
 
-.top_card {
+.topCard {
   display: flex;
   flex-grow: 1;
 }
-.movie_cards_container img {
+.movieCardsContainer img {
   width: 100%;
 
   height: 100%;
-  box-shadow: 3px 4px 6px -1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 6px -1px var(--accent);
   border-radius: 10px 10px 0 0;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out
 }
 
-.bottom_card {
+.bottomCard {
   width: 100%;
 
   display: flex;
@@ -37,11 +47,11 @@ a {
   background-color: var(--secondary);
 }
 
-.bottom_card > * {
+.bottomCard > * {
   margin: 7px;
 }
 
-.bottom_card p {
+.bottomCard p {
   height: 2rem;
   color: var(--text);
   font-weight: 600;
@@ -51,14 +61,14 @@ a {
   font-size: 1rem;
 }
 
-.bottom_card hr {
+.bottomCard hr {
   border: 1px solid rgb(134, 134, 134);
 }
 /* .movie_cards_container > img:hover {
 } */
 
 @media only screen and (max-width: 515px) {
-  .bottom_card p {
+  .bottomCard p {
     font-size: 0.9rem;
   }
 }

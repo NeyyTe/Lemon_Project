@@ -3,6 +3,7 @@ import "./home.css";
 import cinemaMidjourneyWebp from "./images/cinemaMidjourneyWebp.webp";
 import axios from "axios";
 
+
 // Imports des composants
 import MovieCards from "../movieCards/MovieCards";
 import SliderLayout from "../sliderLayout/SliderLayout";
@@ -14,7 +15,6 @@ import { Helmet } from "react-helmet";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 
 const Home = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
@@ -32,7 +32,7 @@ const Home = () => {
         }
 
         //Appel API pour les films d'horreur
-        const horrorResponse = await axios.get(`https://api.tvmaze.com/shows`);
+        const horrorResponse = await axios.get("https://api.tvmaze.com/shows");
         const horrorResult = horrorResponse.data;
         setHorrorMovies(horrorResult);
 
@@ -61,6 +61,8 @@ const Home = () => {
     useEffect(() => {
     fetchData();
   }, []);
+
+
 
   const topRating = [...topRatedMovies] // Destructuring
     .sort((a, b) => b.rating.average - a.rating.average) // Triage par ordre décroissant en fonction de la note

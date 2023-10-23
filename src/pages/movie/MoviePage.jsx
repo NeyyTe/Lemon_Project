@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./moviePage.css";
-
+import { useParams } from "react-router-dom";
 //Import des composants
 import Header from "../../components/header/Header";
 import MovieCards from "../../components/movieCards/MovieCards";
 import Searchbar from "../../components/searchBar/Searchbar";
-import { instance } from "../../api/axiosInstance";
+import Footer from "../../components/footer/Footer";
 
+import { instance } from "../../api/axiosInstance";
 import { Helmet } from "react-helmet"; // Pour gérer dynamiquement les titres dans les onglets
 
 export default function MoviePage() {
@@ -16,7 +17,7 @@ export default function MoviePage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(false);
   const [visibleMovies, setVisibleMovies] = useState(20); // Par défaut, affiche 20 films
-
+const { page } = useParams();
   useEffect(() => {
     const getShows = async () => {
       try {
@@ -28,7 +29,7 @@ export default function MoviePage() {
             setShows(value.data);
           });
 
-        const movieList = await fetch("https://api.tvmaze.com/shows");
+        const movieList = await fetch(`https://api.tvmaze.com/shows?${page}`);
         /*https://api.tvmaze.com/shows?page=288*/
         const movieListResult = await movieList.json();
         setListShows(movieListResult);
@@ -50,7 +51,7 @@ export default function MoviePage() {
     };
 
     getShows();
-  }, [textSearchInput]);
+  }, [page, textSearchInput]);
 
   const recentMovies = listShows.slice(0, visibleMovies);
 
@@ -93,6 +94,7 @@ export default function MoviePage() {
           )}
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

@@ -59,7 +59,7 @@ header nav a.active{
 }
 header h1 {
   color: var(--accent);
-  font-size: clamp(1.5rem, 0.25rem + 3vw, 2.5rem);
+  font-size: clamp(1.5rem, 0.25rem + 3vw, 2rem);
 }
 
 header .nav-btn {

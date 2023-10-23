@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./detailsPage.css";
+//Import des composants 
 import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
+
 import { Helmet } from "react-helmet"; // Pour gérer dynamiquement les titres dans les onglets
 import RenderHtml from "../../components/renderHtml/renderHtml";
 import { useParams, Link } from "react-router-dom";
@@ -29,10 +32,9 @@ function DetailsPage() {
 
   useEffect(() => {
     fetchMovieDetails();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // if (loading) {
-  //   return <p>Chargement en cours...</p>;
   if (loading) {
     return <div className="loader">
     <div className="bar" />
@@ -135,6 +137,7 @@ function DetailsPage() {
             ))}
           </div>
         </section>
+        <Footer/>
       </>
     );
   }

@@ -1,0 +1,15 @@
+.footer{
+    width: 100%;
+    min-height: 10dvh;
+    display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center;  
+}
+
+.footer div > p {
+    font-size: 0.8rem;
+    font-family: Poppins;
+    color: rgb(150, 150, 150);
+    padding: 0 0.5rem;
+}

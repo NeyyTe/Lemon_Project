@@ -18,7 +18,7 @@
 .left_txt > h2 {
   font-family: "Poppins", sans-serif;
   display: block;
-  font-size: clamp(1.575rem, 2vw + 1rem, 4rem);
+  font-size: clamp(1.75rem, 2vw + 1rem, 4rem);
   text-transform: capitalize;
   color: var(--text);
   letter-spacing: 5px;

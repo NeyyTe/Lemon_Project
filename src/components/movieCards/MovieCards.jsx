@@ -8,9 +8,9 @@ const MovieCards = ({ movie }) => {
 
   return (
     
-      <Link to={`/details/${movie.id}`} >
-    <div key={movie.id} className="movie_cards_container">
-      <div className="top_card">
+      <Link className="movieCardsLink"to={`/details/${movie.id}`} >
+    <div key={movie.id} className="movieCardsContainer">
+      <div className="topCard">
         <img
           src={
             movie.image
@@ -20,7 +20,7 @@ const MovieCards = ({ movie }) => {
           alt={movie.name}
         />
       </div>
-      <div className="bottom_card">
+      <div className="bottomCard">
         <p>{movie.name}</p>
         <hr />
         <p>

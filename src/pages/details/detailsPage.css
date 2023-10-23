@@ -26,7 +26,7 @@ justify-content: center;
 }
 
 .movieDetailsRight h2 {
-  font-size: 3rem;
+  font-size: clamp(1.813rem, 2vw + 1rem, 3rem);
 
   letter-spacing: 2px;
 }
@@ -113,10 +113,6 @@ height: 100%;
     .movieDetailsLeft{
  align-items: center;
   width: 100%;
-    }
-    .movieDetailsWrapper{
-
-   
     }
 }
 
