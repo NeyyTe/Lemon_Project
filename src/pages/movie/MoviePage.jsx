@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./moviePage.css";
-import { useParams } from "react-router-dom";
+
 //Import des composants
 import Header from "../../components/header/Header";
 import MovieCards from "../../components/movieCards/MovieCards";
@@ -17,7 +17,7 @@ export default function MoviePage() {
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(false);
   const [visibleMovies, setVisibleMovies] = useState(20); // Par défaut, affiche 20 films
-const { page } = useParams();
+
   useEffect(() => {
     const getShows = async () => {
       try {
@@ -29,8 +29,8 @@ const { page } = useParams();
             setShows(value.data);
           });
 
-        const movieList = await fetch(`https://api.tvmaze.com/shows?${page}`);
-        /*https://api.tvmaze.com/shows?page=288*/
+        const movieList = await fetch("https://api.tvmaze.com/shows");
+        
         const movieListResult = await movieList.json();
         setListShows(movieListResult);
 
@@ -51,7 +51,7 @@ const { page } = useParams();
     };
 
     getShows();
-  }, [page, textSearchInput]);
+  }, [textSearchInput]);
 
   const recentMovies = listShows.slice(0, visibleMovies);
 
