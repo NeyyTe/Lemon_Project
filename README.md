@@ -43,5 +43,5 @@ Once you are on the folder root (Lemon_test)
 
 The browser will automatically open at the following URL : `http://localhost:3000`
 
-### **Now you are ready to go !**
+### **Now you are ready to go !**  
 
