@@ -21,6 +21,7 @@ justify-content: center;
 
 .movieDetailsLeft {
   width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -33,6 +34,7 @@ justify-content: center;
 
 .movieDetailsLeft img {
   min-width: 250px;
+
   border-radius: 5px;
   object-fit: cover;
 }
@@ -43,11 +45,13 @@ justify-content: center;
   flex-direction: column;
 }
 
-.movieDetailsRightContent > * {
-  margin: 1.5rem 0;
+.movieDetailsRightContent  > * {
+  margin: 1rem 0;
 }
 
+
 .showInfos {
+  
   background: var(--secondary);
   color: var(--text);
   padding: 0.3rem 1rem;
@@ -126,8 +130,7 @@ flex-grow: 1;
  align-items: center;
   width: 100%;
     }
-}
-
+  }
 
 @media only screen and (max-width : 655px){
   .secCast {

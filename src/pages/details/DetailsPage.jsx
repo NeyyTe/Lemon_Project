@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./detailsPage.css";
-//Import des composants 
+//Import des composants
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 
@@ -32,17 +32,18 @@ function DetailsPage() {
 
   useEffect(() => {
     fetchMovieDetails();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (loading) {
-    return <div className="loader">
-    <div className="bar" />
-    <div className="bar" />
-    <div className="bar" />
-    <div className="bar" />
-  </div>
-  
+    return (
+      <div className="loader">
+        <div className="bar" />
+        <div className="bar" />
+        <div className="bar" />
+        <div className="bar" />
+      </div>
+    );
   } else {
     return (
       <>
@@ -123,21 +124,23 @@ function DetailsPage() {
           <h1>Casting</h1>
           <div className="secCastGrid">
             {movieDetails._embedded.cast.map((actor) => (
-              <div className="secCastGridChildren"key={actor.person.id}>
+              <div className="secCastGridChildren" key={actor.person.id}>
                 <img
-                  src={actor.character.image &&  actor.character.image.medium 
-                    ?actor.character.image.medium 
-                    : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled.png"}
+                  src={
+                    actor.character.image && actor.character.image.medium
+                      ? actor.character.image.medium
+                      : "https://www.yaakadev.com/wp-content/themes/ryse/assets/images/no-image/No-Image-Found-400x264.png"
+                  }
                   alt={actor.person.name}
                 />
-                
+
                 <h2>{actor.person.name || " Non disponible"}</h2>
                 <p>{actor.character.name || " Non disponible"}.</p>
               </div>
             ))}
           </div>
         </section>
-        <Footer/>
+        <Footer />
       </>
     );
   }
