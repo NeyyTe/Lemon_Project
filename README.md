@@ -61,7 +61,7 @@ J'ai réfléchi à d'éventuelles solutions :
 
 &nbsp;  
 
-**Je suis très intéressé par la solution de ce problème**, en attendant une réponse de votre part."
+**Je suis très intéressé par la solution de ce problème**, en attendant une réponse de votre part.
 
 
 
