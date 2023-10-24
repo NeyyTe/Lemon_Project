@@ -5,7 +5,7 @@
 # **Projet LemonFlix**  
  A fluid, innovative web interface for customers that will
 allow them to organize better the shows that they want to watch.
-### **Deploy Netlify Link** : https://lemonproject.netlify.app/
+### **Deploy Netlify Link** : https://lemonflix.netlify.app/
 ### **This Project Use** :
 
 **ReactJS** framework for Front Interface and the datas API are based on [TVMazeAPI](https://www.tvmaze.com/api)
