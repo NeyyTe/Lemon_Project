@@ -24,11 +24,11 @@ Follow those 3 steps :
 2. ### **Installation**
 
 * #### Clone the GitHub repository localy on your pc with GitBash :  
-**```git clone https://github.com/NeyyTe/Lemon_test.git```**
+         git clone https://github.com/NeyyTe/Lemon_test.git
 
  then **`cd Lemon_test`** and open it with VsCode with **`code .`**
 
- * #### Dependencies :
+   * #### Dependencies :
   
 Before running, install all dependencies -> New Terminal and apply the command : **`npm install`** for the node_modules
 
@@ -38,8 +38,7 @@ Before running, install all dependencies -> New Terminal and apply the command :
 
 Once you are on the folder root (Lemon_test)  
 
-&nbsp;
- **`npm start`** 
+    npm start
 
 The browser will automatically open at the following URL : `http://localhost:3000`
 
@@ -48,10 +47,24 @@ The browser will automatically open at the following URL : `http://localhost:300
 
 ## **Limitations**
 
-  Toutes les consignes demandés ont été effectués avec succés, cependant je fais face à un problème au niveau des données que je reçois. Le endpoint "https://api.tvmaze.com/shows" renvoit une page de 250 résultats et je ne parviens pas à récuperer les données les plus récentes (qui ne comprend que les données datant de 2014 pour la page 0 par exemple) de même pour chercher des films par genres ( ex les films d'horreur les plus récents ).J'ai réfléchi à d'éventuelles solutions :
+ &nbsp;&nbsp; &nbsp;&nbsp; Toutes les consignes demandées ont été effectuées avec succès, cependant je fais face à un problème au niveau des données que je reçois.
 
- - il m'est possible de faire un appel de toutes les données mais la base de données étant trop conséquentes, il me parait difficile de toutes les retourner d'un coup sans avoir de problème de latence. Je me suis beaucoup documenté sur internet et les topics sur ce sujet qui beaucoup demandé, sans réel solution concrète.
+Le endpoint 'https://api.tvmaze.com/shows' renvoie une page de 250 résultats et je ne parviens pas à récupérer les données les plus récentes (qui ne comprennent que les données datant de 2014 pour la page 0 par exemple) de même pour chercher des films par genres (ex. les films d'horreur les plus récents).
 
- -  J'ai tout de même pensé à trier par date ( dans mon cas 2023) cependant mettre en dur l'année me paraissait peu pertinent pour un site qui se veut dynamique.
+Les indices cités dans le show Index de l'api n'ont pas été concluants pour moi malgré de nombreuses recherches et tentatives à ce sujet, certainement et/ou peut-être une approche que je ne maîtrise pas.
 
-Je suis très interessé pour avoir une solution à ce problème, en attendant une réponse de votre part.
+J'ai réfléchi à d'éventuelles solutions :
+
+- J'ai tenté de jouer avec l'URL directement et me suis beaucoup documenté sur internet et les topics sur ce sujet qui est abordé, en vain.
+
+- J'ai tout de même pensé à trier par date (dans mon cas 2023) cependant mettre en dur l'année me paraissait peu pertinent pour un site qui se veut dynamique.
+
+&nbsp;  
+
+**Je suis très intéressé par la solution de ce problème**, en attendant une réponse de votre part."
+
+
+
+
+
+

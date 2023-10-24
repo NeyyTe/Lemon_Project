@@ -123,11 +123,11 @@ function DetailsPage() {
           <h1>Casting</h1>
           <div className="secCastGrid">
             {movieDetails._embedded.cast.map((actor) => (
-              <div key={actor.person.id}>
+              <div className="secCastGridChildren"key={actor.person.id}>
                 <img
                   src={actor.character.image &&  actor.character.image.medium 
                     ?actor.character.image.medium 
-                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Image_not_available.png/640px-Image_not_available.png"}
+                    : "https://www.salonlfc.com/wp-content/uploads/2018/01/image-not-found-1-scaled.png"}
                   alt={actor.person.name}
                 />
                 

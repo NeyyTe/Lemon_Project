@@ -104,6 +104,18 @@ height: 100%;
  
 }
 
+.secCastGridChildren{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.secCastGridChildren img{
+  
+  object-fit: cover;
+flex-grow: 1;
+}
+
 
 @media only screen and (max-width : 1350px) {
     .movieDetails{
