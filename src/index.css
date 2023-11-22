@@ -48,8 +48,7 @@ h6 {
 h1,
 h3 {
   color: var(--text);
-  font-family: 'Cinzel', sans-serif;
-  letter-spacing: 1px;
+  font-family: "Cinzel", sans-serif;
 }
 
 p {
@@ -82,16 +81,9 @@ p {
 }
 
 /**Fonts **/
-
-/*Cinzel*/
-/* @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital@1&family=Great+Vibes&family=Parisienne&family=Playfair+Display+SC:ital@1&family=Tangerine:wght@700&display=swap"); */
-
-/*Poppins*/
-/* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");  */
-
 @font-face {
   font-family: "Cinzel";
-  src: url("/src/assets/fonts/Cinzel/CinzelDecorative-Regular.ttf");
+  src: url("/src/assets/fonts/Cinzel/CinzelDecorative-Bold.ttf");
   font-display: swap;
 }
 @font-face {
