@@ -16,10 +16,14 @@ html,
 body {
   width: 100%;
   height: 100%;
- 
-  background: rgb(13,63,63);
-  background: radial-gradient(circle, rgba(13,63,63,1) 0%, rgba(1,33,35,1) 73%);
- overflow-y: scroll; /* Empêche la ScrollBar de pousser le contenu légérement à gauche lors de son apparition*/
+
+  background: rgb(13, 63, 63);
+  background: radial-gradient(
+    circle,
+    rgba(13, 63, 63, 1) 0%,
+    rgba(1, 33, 35, 1) 73%
+  );
+  overflow-y: scroll; /* Empêche la ScrollBar de pousser le contenu légérement à gauche lors de son apparition*/
 }
 
 img,
@@ -41,24 +45,24 @@ h6 {
   word-break: break-word;
 }
 
-h1,h3{
- color: var(--text);
-  font-family: Cinzel, sans-serif;
+h1,
+h3 {
+  color: var(--text);
+  font-family: 'Cinzel', sans-serif;
+  letter-spacing: 1px;
 }
 
-p{
+p {
   line-height: 150%;
-
 }
 
 :root {
-
   --text: hsl(184, 60%, 95%);
---background: #012123;
---primary: hsl(183, 59%, 24%);
---secondary: hsl(180, 66%, 15%);
---accent: hsl(183, 59%, 49%);
---black : hsl(0, 0%, 0%);
+  --background: #012123;
+  --primary: hsl(183, 59%, 24%);
+  --secondary: hsl(180, 66%, 15%);
+  --accent: hsl(183, 59%, 49%);
+  --black: hsl(0, 0%, 0%);
 }
 
 ::-webkit-scrollbar {
@@ -80,17 +84,18 @@ p{
 /**Fonts **/
 
 /*Cinzel*/
- /* @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital@1&family=Great+Vibes&family=Parisienne&family=Playfair+Display+SC:ital@1&family=Tangerine:wght@700&display=swap"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital@1&family=Great+Vibes&family=Parisienne&family=Playfair+Display+SC:ital@1&family=Tangerine:wght@700&display=swap"); */
 
 /*Poppins*/
- /* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");  */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");  */
+
 @font-face {
-  font-family: 'Poppins';
-  src: url("/src/assets/fonts/Poppins/Poppins-Regular.ttf");
+  font-family: "Cinzel";
+  src: url("/src/assets/fonts/Cinzel/CinzelDecorative-Regular.ttf");
   font-display: swap;
 }
 @font-face {
-  font-family: 'Cinzel';
-  src: url("/src/assets/fonts/Cinzel/Cinzel-VariableFont_wght.ttf");
+  font-family: "Poppins";
+  src: url("/src/assets/fonts/Poppins/Poppins-Regular.ttf");
   font-display: swap;
 }
