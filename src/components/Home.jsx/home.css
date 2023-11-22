@@ -7,7 +7,6 @@
 }
 
 .grid_wrapper {
- 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: center;
@@ -17,11 +16,13 @@
 }
 
 .right_img {
-
+  width: 100%;
 
 }
 .right_img img {
+  
   filter: drop-shadow(0 0 0.5rem var(--black));
+margin: 0 auto;
 }
 
 .left_txt > h2 {
@@ -37,11 +38,6 @@
   background: linear-gradient(120deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.right_img img {
-  width: 100%;
-  /* margin: 0 auto; */
 }
 
 @media only screen and (max-width: 1410px) {
