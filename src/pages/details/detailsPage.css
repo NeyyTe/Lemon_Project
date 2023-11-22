@@ -36,7 +36,7 @@ justify-content: center;
   min-width: 250px;
 
   border-radius: 5px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .movieDetailsRight {
@@ -46,22 +46,18 @@ justify-content: center;
 }
 
 .movieDetailsRightContent  > * {
-  margin: 1rem 0;
+  padding: 1rem 0;
 }
 
 
 .showInfos {
-  
-  background: var(--secondary);
   color: var(--text);
   padding: 0.3rem 1rem;
   border-radius: 10px;
 
-  /*Glassmorphism card*/
   background: rgba(171, 171, 171, 0.2);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(8.4px);
-  -webkit-backdrop-filter: blur(8.4px);
+ 
 }
 
 .showInfos hr {

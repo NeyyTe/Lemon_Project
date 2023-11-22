@@ -20,7 +20,6 @@
   border: none;
   outline: 2px solid var(--primary);
   background-color: aliceblue;
-
 }
 
 .input:focus::placeholder {

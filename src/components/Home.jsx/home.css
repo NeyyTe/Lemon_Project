@@ -7,6 +7,7 @@
 }
 
 .grid_wrapper {
+ 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: center;
@@ -15,8 +16,12 @@
   padding: 0 10%;
 }
 
-.right_img img{
-filter : drop-shadow(0 0 1rem var(--black))
+.right_img {
+
+
+}
+.right_img img {
+  filter: drop-shadow(0 0 0.5rem var(--black));
 }
 
 .left_txt > h2 {
@@ -36,12 +41,11 @@ filter : drop-shadow(0 0 1rem var(--black))
 
 .right_img img {
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 @media only screen and (max-width: 1410px) {
   .grid_wrapper {
- 
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
     align-content: center;

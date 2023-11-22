@@ -8,6 +8,8 @@ import { Helmet } from "react-helmet"; // Pour gérer dynamiquement les titres d
 import RenderHtml from "../../components/renderHtml/renderHtml";
 import { useParams, Link } from "react-router-dom";
 import { instance } from "../../api/axiosInstance";
+
+
 function DetailsPage() {
   const [movieDetails, setMovieDetails] = useState(null);
   const [loading, setLoading] = useState(true);

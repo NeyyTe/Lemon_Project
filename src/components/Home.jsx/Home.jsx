@@ -64,7 +64,7 @@ const Home = () => {
 
 
 
-  const topRating = [...topRatedMovies] // Destructuring
+  const topRating = [...topRatedMovies] 
     .sort((a, b) => b.rating.average - a.rating.average) // Triage par ordre décroissant en fonction de la note
     .slice(0, 20); //Renvoie une copie du tableau d'origine, ici les 20 premiers
 
@@ -84,6 +84,7 @@ const Home = () => {
             </h2>
           </div>
           <div className="right_img">
+          {/* <Spline scene="https://prod.spline.design/oJup1B29kGVOj3l7/scene.splinecode" /> */}
             <img 
            
             src={cinemaMidjourneyWebp} alt="cinema_image" />
