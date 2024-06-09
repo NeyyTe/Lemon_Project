@@ -3,68 +3,66 @@ import "./home.css";
 import cinemaMidjourneyWebp from "./images/cinemaMidjourneyWebp.webp";
 import axios from "axios";
 
-
 // Imports des composants
 import MovieCards from "../movieCards/MovieCards";
 import SliderLayout from "../sliderLayout/SliderLayout";
 
 // Pour gérer dynamiquement les titres dans les onglets
-import { Helmet } from "react-helmet"; 
+import { Helmet } from "react-helmet";
 
 //Import Bibliothèque Slicker carousel
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+// SPLINE
+// import Spline from "@splinetool/react-spline";
 const Home = () => {
   const [topRatedMovies, setTopRatedMovies] = useState([]);
   const [horrorMovies, setHorrorMovies] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
   const [error, setError] = useState(null);
 
-    const fetchData = async () => {
-      try {
-        //Appel API pour les mieux notés
-        const response = await axios.get("https://api.tvmaze.com/shows");
-        const result = response.data;
-        if (Array.isArray(result) && result.length > 0) {
-          setTopRatedMovies(result);
-        }
-
-        //Appel API pour les films d'horreur
-        const horrorResponse = await axios.get("https://api.tvmaze.com/shows");
-        const horrorResult = horrorResponse.data;
-        setHorrorMovies(horrorResult);
-
-        const horrorMoviesFiltered = horrorResult.filter((el) =>
-          el.genres.includes("Horror")
-        );
-
-        // Tri par ordre décroissant et date de sortie
-        horrorMoviesFiltered.sort((a, b) => {
-          const dateA = new Date(a.premiered);
-          const dateB = new Date(b.premiered);
-          return dateB - dateA;
-        });
-        setHorrorMovies(horrorMoviesFiltered);
-      } catch (error) {
-        setError(true);
-        setErrorMessage(
-          "Impossible de charger les films pour le moment. Veuillez réessayer plus tard."
-        );
-        console.error(
-          "Impossible de charger les films pour le moment. Veuillez réessayer plus tard.",
-          error
-        );
+  const fetchData = async () => {
+    try {
+      //Appel API pour les mieux notés
+      const response = await axios.get("https://api.tvmaze.com/shows");
+      const result = response.data;
+      if (Array.isArray(result) && result.length > 0) {
+        setTopRatedMovies(result);
       }
-    };
-    useEffect(() => {
+
+      //Appel API pour les films d'horreur
+      const horrorResponse = await axios.get("https://api.tvmaze.com/shows");
+      const horrorResult = horrorResponse.data;
+      setHorrorMovies(horrorResult);
+
+      const horrorMoviesFiltered = horrorResult.filter((el) =>
+        el.genres.includes("Horror")
+      );
+
+      // Tri par ordre décroissant et date de sortie
+      horrorMoviesFiltered.sort((a, b) => {
+        const dateA = new Date(a.premiered);
+        const dateB = new Date(b.premiered);
+        return dateB - dateA;
+      });
+      setHorrorMovies(horrorMoviesFiltered);
+    } catch (error) {
+      setError(true);
+      setErrorMessage(
+        "Impossible de charger les films pour le moment. Veuillez réessayer plus tard."
+      );
+      console.error(
+        "Impossible de charger les films pour le moment. Veuillez réessayer plus tard.",
+        error
+      );
+    }
+  };
+  useEffect(() => {
     fetchData();
   }, []);
 
-
-
-  const topRating = [...topRatedMovies] 
+  const topRating = [...topRatedMovies]
     .sort((a, b) => b.rating.average - a.rating.average) // Triage par ordre décroissant en fonction de la note
     .slice(0, 20); //Renvoie une copie du tableau d'origine, ici les 20 premiers
 
@@ -79,15 +77,12 @@ const Home = () => {
         <div className="grid_wrapper">
           <div className="left_txt">
             <h2>
-              Regardez vos films préférés 
-              entre <span>Lemoniens </span>!
+              Regardez vos films préférés entre <span>Lemoniens </span>!
             </h2>
           </div>
           <div className="right_img">
-          {/* <Spline scene="https://prod.spline.design/oJup1B29kGVOj3l7/scene.splinecode" /> */}
-            <img 
-           
-            src={cinemaMidjourneyWebp} alt="cinema_image" />
+            {/* <Spline scene="https://prod.spline.design/oJup1B29kGVOj3l7/scene.splinecode" /> */}
+            <img src={cinemaMidjourneyWebp} alt="cinema_image" />
           </div>
         </div>
 
