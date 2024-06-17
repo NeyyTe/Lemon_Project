@@ -26,6 +26,7 @@ const MovieCards = ({ movie }) => {
             ⭐{movie?.rating?.average} / {movie?.premiered}
           </p>
           <p>{movie?.genres}</p>
+          <p>allo</p>
         </div>
       </div>
     </Link>
